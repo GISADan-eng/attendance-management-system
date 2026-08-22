@@ -12,11 +12,13 @@ const protect = async (req, res, next) => {
             return res.status(401).json({message: 'User not found'});
         }
         return next();
-    } catch (err) {
+    }
+    catch(err)
+    {
         return res.status(401).json({message: 'Not authorized, token failed'});
     }
 }
 
 return res.status(401).json({message: 'Not authorized, not token'});
 
-module.exports = {protect}; 
+module.exports = {protect};
